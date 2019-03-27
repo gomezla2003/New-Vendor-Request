@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="po_transmission_method" table="x_sthc_vendor_requ_vendor_request" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>po_transmission_method</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>EDI</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 22:09:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>86650fd6db17234040f8fcfa0c961993</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-01-31 22:09:01</sys_updated_on>
+            <value>edi</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>po_transmission_method</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Email</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 22:08:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>9c65071adb17234040f8fcfa0c9619c7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-01-31 22:08:54</sys_updated_on>
+            <value>email</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>po_transmission_method</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Fax</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 22:08:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>19550f5adb17234040f8fcfa0c961960</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-01-31 22:08:47</sys_updated_on>
+            <value>fax</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>po_transmission_method</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 22:09:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>ef65cf96db17234040f8fcfa0c961996</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-01-31 22:09:07</sys_updated_on>
+            <value>other</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>po_transmission_method</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Phone</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 22:09:35</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>92854f5adb17234040f8fcfa0c961911</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-01-31 22:09:35</sys_updated_on>
+            <value>phone</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>po_transmission_method</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PO Transmission Address</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 22:09:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>bb750f5adb17234040f8fcfa0c9619cc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-01-31 22:09:25</sys_updated_on>
+            <value>po</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>po_transmission_method</element>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 22:08:47</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>aa55071adb17234040f8fcfa0c9619c3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>po_transmission_method</sys_name>
+            <sys_package display_value="Vendor Request" source="x_sthc_vendor_requ">f46a7ccedbdb6f0040f8fcfa0c961971</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Vendor Request">f46a7ccedbdb6f0040f8fcfa0c961971</sys_scope>
+            <sys_update_name>sys_choice_x_sthc_vendor_requ_vendor_request_po_transmission_method</sys_update_name>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-01-31 22:08:47</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

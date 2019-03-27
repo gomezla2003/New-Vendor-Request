@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="c892839edbd3234040f8fcfa0c961928" sys_domain="global" table="x_sthc_vendor_requ_vendor_request" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 21:56:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>5c92839edbd3234040f8fcfa0c96192b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_sthc_vendor_requ_vendor_request" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">c892839edbd3234040f8fcfa0c961928</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">9412875edbd3234040f8fcfa0c96190a</sys_ui_section>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-01-31 21:56:36</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 21:56:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>5892839edbd3234040f8fcfa0c96192c</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_sthc_vendor_requ_vendor_request" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">c892839edbd3234040f8fcfa0c961928</sys_ui_form>
+            <sys_ui_section caption="Remit Address" display_value="Remit Address" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">4492839edbd3234040f8fcfa0c961927</sys_ui_section>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:30:53</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 22:02:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>e0d38f92db17234040f8fcfa0c96196e</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_sthc_vendor_requ_vendor_request" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">c892839edbd3234040f8fcfa0c961928</sys_ui_form>
+            <sys_ui_section caption="Customer Service Address" display_value="Customer Service Address" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">acd38f92db17234040f8fcfa0c96196a</sys_ui_section>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:30:53</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 22:02:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>b0d38f92db17234040f8fcfa0c961973</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_sthc_vendor_requ_vendor_request" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">c892839edbd3234040f8fcfa0c961928</sys_ui_form>
+            <sys_ui_section caption="Vendor Information" display_value="Vendor Information" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">e4d38f92db17234040f8fcfa0c96196b</sys_ui_section>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:30:53</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-27 18:43:10</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>3939d18bdbf32b8096b17d8bbf96198d</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_sthc_vendor_requ_vendor_request" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">c892839edbd3234040f8fcfa0c961928</sys_ui_form>
+            <sys_ui_section caption="Legal / Sourcing" display_value="Legal / Sourcing" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">3d39d18bdbf32b8096b17d8bbf96198a</sys_ui_section>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:44:55</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>5</position>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-27 18:55:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>300c198fdbf32b8096b17d8bbf961911</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_sthc_vendor_requ_vendor_request" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">c892839edbd3234040f8fcfa0c961928</sys_ui_form>
+            <sys_ui_section caption="Finance 1099 Review" display_value="Finance 1099 Review" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">680c118fdbf32b8096b17d8bbf96193b</sys_ui_section>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:55:28</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>6</position>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-06 21:44:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>b669b9d4dbe32f4040f8fcfa0c9619cf</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_sthc_vendor_requ_vendor_request" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">c892839edbd3234040f8fcfa0c961928</sys_ui_form>
+            <sys_ui_section caption="Notes" display_value="Notes" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">ba69b9d4dbe32f4040f8fcfa0c9619cc</sys_ui_section>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:55:28</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-01-31 21:56:36</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>c892839edbd3234040f8fcfa0c961928</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_sthc_vendor_requ_vendor_request</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Vendor Request" source="x_sthc_vendor_requ">f46a7ccedbdb6f0040f8fcfa0c961971</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Vendor Request">f46a7ccedbdb6f0040f8fcfa0c961971</sys_scope>
+            <sys_update_name>sys_ui_form_sections_c892839edbd3234040f8fcfa0c961928</sys_update_name>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-01-31 21:56:36</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

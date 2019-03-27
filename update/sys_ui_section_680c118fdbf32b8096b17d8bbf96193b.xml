@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Finance 1099 Review" section_id="680c118fdbf32b8096b17d8bbf96193b" sys_domain="global" table="x_sthc_vendor_requ_vendor_request" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_1099_reviewed</element>
+            <position>0</position>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-27 18:57:22</sys_created_on>
+            <sys_id>b57cdd8fdbf32b8096b17d8bbf9619a6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Finance 1099 Review" display_value="Finance 1099 Review" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">680c118fdbf32b8096b17d8bbf96193b</sys_ui_section>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:57:22</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_1099_required</element>
+            <position>1</position>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-27 18:57:22</sys_created_on>
+            <sys_id>797cdd8fdbf32b8096b17d8bbf9619a6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Finance 1099 Review" display_value="Finance 1099 Review" name="x_sthc_vendor_requ_vendor_request" sys_domain="global" view="Default view">680c118fdbf32b8096b17d8bbf96193b</sys_ui_section>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:57:22</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Finance 1099 Review</caption>
+            <header>false</header>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-27 18:55:22</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>680c118fdbf32b8096b17d8bbf96193b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Finance 1099 Review</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Vendor Request" source="x_sthc_vendor_requ">f46a7ccedbdb6f0040f8fcfa0c961971</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Vendor Request">f46a7ccedbdb6f0040f8fcfa0c961971</sys_scope>
+            <sys_update_name>sys_ui_section_680c118fdbf32b8096b17d8bbf96193b</sys_update_name>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:55:22</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="Vendor Request" max_length="40" name="x_sthc_vendor_requ_vendor_request" sizeclass="6" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Approximate annual spend" max_length="40" name="approximate_annual_spend" type="string"/>
+        <element label="Category Administrator" max_length="32" name="category_administrator" reference="sys_user" type="reference"/>
+        <element choice="1" label="Company Trade" max_length="40" name="company_trade" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Private" value="private"/>
+                <element inactive_on_update="false" label="Public" value="public"/>
+            </choice>
+        </element>
+        <element choice="1" label="Conflict of Interest" max_length="40" name="conflict_of_interest" type="string">
+            <choice>
+                <element inactive_on_update="false" label="No" value="no"/>
+                <element inactive_on_update="false" label="Yes" value="yes"/>
+            </choice>
+        </element>
+        <element label="Conflict of Interest Members" max_length="500" name="conflict_of_interest_members" type="string"/>
+        <element choice="1" label="Contract Required" max_length="40" name="contract_required" type="string">
+            <choice>
+                <element inactive_on_update="false" label="No" value="no"/>
+                <element inactive_on_update="false" label="Yes" value="yes"/>
+            </choice>
+        </element>
+        <element label="Customer Service Address" max_length="40" name="customer_service_address" type="string"/>
+        <element label="Customer Service City" max_length="40" name="customer_service_city" type="string"/>
+        <element label="Customer Service Email" max_length="40" name="customer_service_email" type="string"/>
+        <element label="Customer Service Fax" max_length="40" name="customer_service_fax" type="string"/>
+        <element label="Customer Service Name" max_length="40" name="customer_service_name" type="string"/>
+        <element label="Customer Service Phone" max_length="40" name="customer_service_phone" type="string"/>
+        <element label="Customer Service State" max_length="40" name="customer_service_state" type="string"/>
+        <element label="Customer Service Zip Code" max_length="40" name="customer_service_zip_code" type="string"/>
+        <element label="DBA" max_length="40" name="dba" type="string"/>
+        <element label="Description of Goods" max_length="500" name="description_of_goods" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Has vendor provided a contract?" max_length="40" name="has_vendor_provided_a_contract" type="string">
+            <choice>
+                <element inactive_on_update="false" label="No" value="no"/>
+                <element inactive_on_update="false" label="Yes" value="yes"/>
+            </choice>
+        </element>
+        <element choice="1" label="Information System Vendor" max_length="40" name="information_system_vendor" type="string">
+            <choice>
+                <element inactive_on_update="false" label="No" value="no"/>
+                <element inactive_on_update="false" label="Yes" value="yes"/>
+            </choice>
+        </element>
+        <element label="Legal Name" max_length="40" name="legal_name" type="string"/>
+        <element label="OIG/AZCC" max_length="40" name="oig_azcc" type="boolean"/>
+        <element label="On-site Vendor" max_length="40" name="on_site_vendor" type="string"/>
+        <element choice="1" label="Patient Care Vendor" max_length="40" name="patient_care_vendor" type="string">
+            <choice>
+                <element inactive_on_update="false" label="No" value="no"/>
+                <element inactive_on_update="false" label="Yes" value="yes"/>
+            </choice>
+        </element>
+        <element choice="1" label="Patient Information Vendor" max_length="40" name="patient_information_vendor" type="string">
+            <choice>
+                <element inactive_on_update="false" label="No" value="no"/>
+                <element inactive_on_update="false" label="Yes" value="yes"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Payment Terms" max_length="40" name="payment_terms" type="string"/>
+        <element choice="1" label="PO Transmission Method" max_length="40" name="po_transmission_method" type="string">
+            <choice>
+                <element inactive_on_update="false" label="EDI" value="edi"/>
+                <element inactive_on_update="false" label="Email" value="email"/>
+                <element inactive_on_update="false" label="Fax" value="fax"/>
+                <element inactive_on_update="false" label="Other" value="other"/>
+                <element inactive_on_update="false" label="Phone" value="phone"/>
+                <element inactive_on_update="false" label="PO Transmission Address" value="po"/>
+            </choice>
+        </element>
+        <element label="Remit City" max_length="40" name="remit_city" type="string"/>
+        <element label="Remit Contact Name" max_length="40" name="remit_contact_name" type="string"/>
+        <element label="Remit Email" max_length="40" name="remit_email" type="string"/>
+        <element label="Remit Fax" max_length="40" name="remit_fax" type="string"/>
+        <element label="Remit Phone" max_length="40" name="remit_phone" type="string"/>
+        <element label="Remit State" max_length="40" name="remit_state" type="string"/>
+        <element label="Remit to Address" max_length="40" name="remit_to_address" type="string"/>
+        <element label="Remit Zip Code" max_length="40" name="remit_zip_code" type="string"/>
+        <element label="Requested on behalf of" max_length="32" name="requested_on_behalf_of" reference="sys_user" type="reference"/>
+        <element label="Requester Email" max_length="40" name="requester_email" type="string"/>
+        <element label="Requester Name" max_length="32" name="requester_name" reference="sys_user" type="reference"/>
+        <element label="Requester Phone" max_length="40" name="requester_phone" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Service Type" max_length="40" name="service_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Goods" sequence="1" value="goods"/>
+                <element inactive_on_update="false" label="Services" sequence="2" value="services"/>
+                <element inactive_on_update="false" label="Goods &amp; Services" sequence="3" value="goods&amp;services"/>
+            </choice>
+        </element>
+        <element label="Vendor Signature" max_length="10000" name="signature" type="user_image"/>
+        <element label="Sig code" max_length="20000" name="sig_code" type="string"/>
+        <element label="Sourcing/Legal Reviewed" max_length="40" name="sourcing_legal_reviewed" type="boolean"/>
+        <element label="Stakeholder Department" max_length="40" name="stakeholder_department" type="string"/>
+        <element label="Stakeholder Email" max_length="40" name="stakeholder_email" type="string"/>
+        <element label="Stakeholder Name" max_length="40" name="stakeholder_name" type="string"/>
+        <element label="Stakeholder Phone" max_length="40" name="stakeholder_phone" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="1099 Required?" max_length="40" name="u_1099_required" type="string">
+            <choice>
+                <element inactive_on_update="false" label="No" value="no"/>
+                <element inactive_on_update="false" label="Yes" value="yes"/>
+            </choice>
+        </element>
+        <element label="1099 Reviewed" max_length="40" name="u_1099_reviewed" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Vendor Contact Name" max_length="40" name="vendor_contact_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Vendor Email" max_length="40" name="vendor_email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Vendor Number" max_length="40" name="vendor_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Vendor Phone" max_length="40" name="vendor_phone" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="state" table="x_sthc_vendor_requ_vendor_request" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Submitted</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-01 18:33:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>7f7d13eadb9f634040f8fcfa0c9619b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-01 18:33:03</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Waiting on Vendor</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-01 18:33:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>7b9d13eadb9f634040f8fcfa0c9619d6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-01 18:33:18</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Received from vendor</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-01 18:34:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>4edd53eadb9f634040f8fcfa0c9619d6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-01 18:34:17</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Awaiting Legal</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-01 18:34:35</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>2eed176adb9f634040f8fcfa0c9619db</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-01 18:34:35</sys_updated_on>
+            <value>4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Awaiting Sourcing</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-01 18:34:43</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>e4fd5beadb9f634040f8fcfa0c96196a</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-27 18:47:47</sys_updated_on>
+            <value>5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Awaiting input to ERP</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-01 18:38:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>24ee93eadb9f634040f8fcfa0c96196e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-01 18:38:49</sys_updated_on>
+            <value>6</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Complete</label>
+            <language>en</language>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sequence/>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-01 18:38:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>16ee9faadb9f634040f8fcfa0c961984</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-01 18:38:55</sys_updated_on>
+            <value>7</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <name>x_sthc_vendor_requ_vendor_request</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2019-02-01 18:33:03</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>009d97aadb9f634040f8fcfa0c961926</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>state</sys_name>
+            <sys_package display_value="Vendor Request" source="x_sthc_vendor_requ">f46a7ccedbdb6f0040f8fcfa0c961971</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Vendor Request">f46a7ccedbdb6f0040f8fcfa0c961971</sys_scope>
+            <sys_update_name>sys_choice_x_sthc_vendor_requ_vendor_request_state</sys_update_name>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2019-02-01 18:33:03</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

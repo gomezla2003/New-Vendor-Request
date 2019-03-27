@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,$http, spUtil, nowAttachmentHandler, $rootScope, $sanitize, $window, $sce) {  
+  var c = this;  
+	
+	
+
+$scope.submit = function(){
+	if(c.data.attach == ''){
+		swal("Attachment Error", "Please attach your W9 to this form", "error");
+		
+	}
+	
+		else if(!c.data.src){
+	swal("Signature Error", "Please sign, and save your signature", "error");
+	}
+	else{
+		c.data.yes = 'true';
+		c.server.update();
+	swal("Thank you", "Your request has been submitted","success").then(function () {
+		var url = 'https://www.honorhealth.com/';
+	top.window.location = url;
+		
+	});
+	}
+}
+
+
+$scope.reject = function(){
+	if(!c.data.src){
+	swal("Signature Error", "Please sign, and save your signature", "error");
+	}
+	else{
+		c.data.no = 'false';
+		c.server.update();
+	swal("Thank You", "This request has been cancelled","error").then(function () {
+		var url = 'https://www.honorhealth.com/';
+	top.window.location = url;
+		
+	});
+	}
+}
+
+
+
+
+
+
+
+
+
+
+  var ah = $scope.attachmentHandler = new nowAttachmentHandler(setAttachments, function() {});
+
+  ah.setParams('x_sthc_vendor_requ_vendor_request', c.data.sys_id, 1024 * 1024 * 24);
+
+  function setAttachments(attachments, action) {
+
+  //$scope.attachments = attachments;
+		var test = JSON.stringify(attachments);
+		var FIVE_MIN=9999999000;
+		var date = new Date();
+		for(var i=0;i<attachments.length; i++){
+			if((date - new Date(attachments[i].sys_updated_on_display)) > FIVE_MIN) {
+				attachments.splice(i,1);
+}
+		}
+		$scope.attachments = attachments;
+		c.data.attach = attachments;
+  }
+
+ $scope.attachmentHandler.getAttachmentList();
+	
+	
+
+  $scope.confirmDeleteAttachment = function(attachment, $event) {
+
+      $rootScope.$broadcast("dialog.delete_attachment.show", {
+
+          parms: {
+
+              ok: function() {
+
+                  $scope.attachmentHandler.deleteAttachment(attachment);
+
+                  $rootScope.$broadcast("dialog.delete_attachment.close");
+
+              },
+
+              cancel: function() {
+
+                  $rootScope.$broadcast("dialog.delete_attachment.close");
+
+              },
+
+              details: attachment.name
+
+          }
+
+      })
+
+  }
+	
+	
+	
+	
+	
+	
+	
+
+}
+		
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>
+body {
+    font-family: sans-serif;
+    font-weight: 800;
+    background: #eee;
+  }
+  .switch {
+    position: relative;
+    top: 50%;
+    left: 88%;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    margin: -30px 0 0 -75px;
+    background: #00bc9c;
+    transition: all 0.2s ease;
+    border-radius: 25px;
+  }
+  .switch span {
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    top: 50%;
+    left: 50%;
+    margin: -2px 0px 0px -4px;
+    background: #fff;
+    display: block;
+    transform: rotate(-45deg);
+    transition: all 0.2s ease;
+  }
+  .switch span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 12px;
+    margin-top: -8px;
+    background: #fff;
+    transition: all 0.2s ease;
+  }
+  input[type=radio] {
+    display: none;
+  }
+  .switch label {
+    cursor: pointer;
+    color: rgba(0,0,0,0.2);
+    width: 60px;
+    line-height: 50px;
+    transition: all 0.2s ease;
+  }
+  label[for=yes] {
+    position: absolute;
+    left: 0px;
+    height: 20px;
+  }
+  label[for=no] {
+    position: absolute;
+    right: 0px;
+  }
+  #no:checked ~ .switch {
+    background: #eb4f37;
+  }
+  #no:checked ~ .switch span {
+    background: #fff;
+    margin-left: -8px;
+  }
+  #no:checked ~ .switch span:after {
+    background: #fff;
+    height: 20px;
+    margin-top: -8px;
+    margin-left: 8px;
+  }
+  #yes:checked ~ .switch label[for=yes] {
+    color: #fff;
+  }
+  #no:checked ~ .switch label[for=no] {
+    color: #fff;
+  }
+
+
+
+
+
+
+
+          html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+          }
+
+          .container {
+            border: 1px solid red;
+            padding: 10px 10px 40px 10px;
+            position: relative;
+            margin: 0 auto 0 auto;
+            height: 100%;
+          }
+
+          .container .signature {
+            border: 1px solid orange;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+
+          .container .signature canvas {
+            border: 1px solid #999;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+
+          .container .buttons {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+          }
+
+          .container .sizes {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+          }
+
+          .container .sizes input {
+            width: 4em;
+            text-align: center;
+          }
+
+          .result {
+            border: 1px solid blue;
+            margin: 30px auto 0 auto;
+            height: 220px;
+            width: 568px;
+          }
+        
+
+.container {
+  padding-top: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  margin: 20px;
+  vertical-align: middle;
+  
+}
+
+.icon-success {
+    color: #5CB85C;
+}
+.red{
+  background: #ff0000;
+}
+.green{
+  background: #008000;
+}
+
+
+
+.form-group{
+  padding-right:10px;
+  padding-left:10px;
+}
+
+.sp-attachment-block-single-line{
+  //height: 200px;
+}
+</css>
+        <data_table>sp_instance_link</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,short_description,glyph,class_name,type,sc_category,url,kb_article,kb_topic,kb_category,sc_cat_item,sp_page,color</field_list>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>Vendor Validation</name>
+        <option_schema>[{"name":"link_template","label":"Template","type":"choice","choices":[{"label":"Top Icon","value":"Top Icon"},{"label":"Circle Icon","value":"Circle Icon"},{"label":"Color Box","value":"Color Box"}]}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  
+	
+var vendorREQ = gs.action.getGlideURI().get('vendor')
+data.sys_id = vendorREQ;
+//var requestID = gs.action.getGlideURI().get('req')
+//	var getUser = new x_sthc_carelink.Carelink();
+	
+	//data.user = CareLinkUser;
+	//data.userInfo = [];
+	//data.userInfo = getUser.getUser(CareLinkUser);
+	//data.approval_status = getUser.getApproval(requestID);
+	//gs.addErrorMessage(data.userInfo.toString());
+
+	data._attachmentGUID = gs.generateGUID();
+	if(input){
+
+		
+		
+		
+	var img = input.src;
+	var final_img = img.substr(22);
+		
+var vendor = new GlideRecord('x_sthc_vendor_requ_vendor_request');
+		vendor.get(vendorREQ);
+		vendor.legal_name = input.legal_name;
+		vendor.conflict_of_interest_members = input.conflict_list;
+		vendor.customer_service_fax = input.cs_fax;
+		vendor.customer_service_zip_code = input.cs_zip;
+		vendor.customer_service_phone = input.cs_phone;
+		vendor.customer_service_state = input.cs_state;
+		vendor.customer_service_email = input.cs_email;
+		vendor.customer_service_city = input.cs_city;
+		vendor.customer_service_name = input.cs_contact_person;
+		vendor.customer_service_address = input.cs_address;
+		vendor.remit_fax = input.remit_fax;
+		vendor.remit_zip_code = input.remit_zip;
+		vendor.remit_phone = input.remit_phone;
+		vendor.remit_state = input.remit_state;
+		vendor.remit_email = input.remit_email;
+		vendor.remit_city = input.remit_city;
+		vendor.remit_contact_name = input.contact_name;
+		vendor.remit_to_address = input.remit_address;
+		vendor.po_transmission_method = input.po_transmission;
+		vendor.company_trade = input.company_trade;
+		vendor.state = '3';
+		vendor.conflict_of_interest = input.coi;
+		vendor.payment_terms = input.terms;
+		
+		vendor.update();
+			
+	var sig = new GlideRecord('x_sthc_vendor_requ_vendor_siganture_translation');
+	sig.initialize();
+	sig.request_link = vendorREQ;
+	sig.signature = final_img;
+	sig.insert();
+	
+	}
+	
+	
+})(); 
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2019-01-31 22:28:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>25f94f9edb17234040f8fcfa0c961948</sys_id>
+        <sys_mod_count>211</sys_mod_count>
+        <sys_name>Vendor Validation</sys_name>
+        <sys_package display_value="Vendor Request" source="x_sthc_vendor_requ">f46a7ccedbdb6f0040f8fcfa0c961971</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Vendor Request">f46a7ccedbdb6f0040f8fcfa0c961971</sys_scope>
+        <sys_update_name>sp_widget_25f94f9edb17234040f8fcfa0c961948</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2019-03-25 21:44:05</sys_updated_on>
+        <template><![CDATA[<form class="form-horizontal">
+
+  <div class="container">
+
+ 
+
+      <div class="col-lg-8 col-lg-offset-2">
+
+        <h1>Vendor Request Validation</h1>
+
+        <h5>
+          Thank you for your interest in becoming a vendor for HonorHealth. 
+          Please complete the following required fields and attach a completed and signed W9 using the paperclip icon at the bottom of the page.  
+          Failure to provide complete information may delay payment.  
+          If you are unable to complete the request or have questions, please contact the HonorHealth Supply Chain Service Desk at <a href="mailto:DLITServiceDesk@honorhealth.com">DLITServiceDesk@honorhealth.com</a>.
+        </h5>
+       <br><br>
+
+        <form id="contact-form">
+
+           <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="legal_name">Legal name as recorded with Secretary of State</label>
+                <input ng-model="data.legal_name" id="legal_name" name="legal_name" class="form-control"  placeholder="Legal name of company" rows="" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+          </div>
+          </div>
+          
+      
+          
+          
+  <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>State of Incorporation</label>
+            		<select ng-model="data.incorp" class="form-control" required="required">
+                 <option disabled selected value>- - Select an option - -</option>
+ 								 <option value="Alabama">Alabama</option>
+                 <option value="Alaska">Alaska</option>
+                 <option value="Arizona">Arizona</option>
+                 <option value="Arkansas">Arkansas</option>
+                 <option value="California">California</option>
+                  <option value="Colorado">Colorado</option>
+                  <option value="Connecticut">Connecticut</option>
+                  <option value="Delaware">Delaware</option>
+                  <option value="Florida">Florida</option>
+                  <option value="Georgia">Georgia</option>
+                  <option value="Hawaii">Hawaii</option>
+                  <option value="Idaho">Idaho</option>
+                  <option value="Illinois">Illinois</option>
+                  <option value="Indiana">Indiana</option>
+                  <option value="Iowa">Iowa</option>
+                  <option value="Kansas">Kansas</option>
+                  <option value="Kentucky">Kentucky</option>
+                  <option value="Louisiana">Louisiana</option>
+                  <option value="Maine">Maine</option>
+                  <option value="Maryland">Maryland</option>
+                  <option value="Massachusetts">Massachusetts</option>
+                  <option value="Michigan">Michigan</option>
+                  <option value="Minnesota">Minnesota</option>
+                  <option value="Mississippi">Mississippi</option>
+                  <option value="Missouri">Missouri</option>
+                  <option value="Nebraska">Nebraska</option>
+                  <option value="Nevada">Nevada</option>
+                  <option value="New Hampshire">New Hampshire</option>
+                  <option value="Montana">Montana</option>
+                  <option value="New Jersey">New Jersey</option>
+                  <option value="New Mexico">New Mexico</option>
+                  <option value="New York">New York</option>
+                  <option value="North Carolina">North Carolina</option>
+                  <option value="North Dakota">North Dakota</option>
+                  <option value="Ohio">Ohio</option>
+                  <option value="Oklahoma">Oklahoma</option>
+                  <option value="Oregon">Oregon</option>
+                  <option value="Pennsylvania">Pennsylvania</option>
+                  <option value="South Carolina">South Carolina</option>
+                  <option value="Rhode Island">Rhode Island</option>
+                  <option value="South Dakota">South Dakota</option>
+                  <option value="Tennessee">Tennessee</option>
+                  <option value="Texas">Texas</option>
+                  <option value="Utah">Utah</option>
+                  <option value="Vermont">Vermont</option>
+                  <option value="Virginia">Virginia</option>
+                  <option value="Washington">Washington</option>
+                  <option value="West Virginia">West Virginia</option>
+                  <option value="Wisconsin">Wisconsin</option>
+                  <option value="Wyoming">Wyoming</option>           
+                  
+                </select> 
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="remit_address">Remit to address *</label>
+                <input ng-model="data.remit_address" id="remit_address" type="text" name="remit_address" class="form-control" required="required" >
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="contact_name">Contact Name *</label>
+                <input ng-model="data.contact_name" id="contact_name" type="text" name="contact_name" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+             <div class="col-md-6">
+              <div class="form-group">
+                <label for="remit_city">City *</label>
+                <input ng-model="data.remit_city" id="remit_city" type="text" name="remit_city" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="remit_email">Email</label>
+                <input ng-model="data.remit_email" id="remit_email" type="text" name="remit_email" class="form-control" required="required" >
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="remit_state">State</label>
+                <input ng-model="data.remit_state" id="remit_state" type="text" name="remit_state" class="form-control" required="required" >
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="remit_phone">Phone</label>
+                <input ng-model="data.remit_phone" id="remit_phone" type="text" name="remit_phone" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="remit_zip">Zip</label>
+                <input ng-model="data.remit_zip" id="remit_zip" type="text" name="remit_zip" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="remit_fax">Fax</label>
+                <input ng-model="data.remit_fax" id="remit_fax" type="text" name="remit_fax" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div>
+       
+              
+                 <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="cs_address">Customer Service Address </label>
+                <input ng-model="data.cs_address" id="cs_address" type="text" name="cs_address" class="form-control" required="required" data-error="Address is required.">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="cs_contact_person">Contact Name </label>
+                <input ng-model="data.cs_contact_person" id="cs_contact_person" type="text" name="cs_contact_person" class="form-control" required="required" data-error="Name is required.">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+             <div class="col-md-6">
+              <div class="form-group">
+                <label for="cs_city">City *</label>
+                <input ng-model="data.cs_city" id="cs_city" type="text" name="cs_city" class="form-control" required="required" data-error="City is required.">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="cs_email">Email</label>
+                <input ng-model="data.cs_email" id="cs_email" type="text" name="cs_email" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+           
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="cs_state">State</label>
+                <input ng-model="data.cs_state" id="cs_state" type="text" name="cs_state" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="cs_phone">Phone</label>
+                <input ng-model="data.cs_phone" id="cs_phone" type="text" name="cs_phone" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="cs_zip">Zip</label>
+                <input ng-model="data.cs_zip" id="cs_zip" type="text" name="cs_zip" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="cs_fax">Fax</label>
+                <input ng-model="data.cs_fax" id="cs_fax" type="text" name="cs_fax" class="form-control" required="required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div>
+              
+
+        
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>PO Transmission Method</label>
+            		<select ng-model="data.po_transmission" class="form-control" required="required">
+                 <option disabled selected value>- - Select an option - -</option>
+ 								 <option value="fax">Fax</option>
+                 <option value="email">Email</option>
+                 <option value="edi">EDI</option>
+                 <option value="other">Other</option>
+                 <option value="phone">Phone</option>
+                </select> 
+              </div>
+            </div>
+          </div>
+            
+                <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Payment Terms</label>
+            		<select ng-model="data.terms" class="form-control" required="required">
+                 <option disabled selected value>- - Select an option - -</option>
+ 								 <option value="wells_fargo">Wells Fargo Virtual Credit Card - Net 15</option>
+                  <option value="amex">AMEX BIP - Net 15</option>
+                 <option value="ach">ACH - Net 45</option>
+                 <option value="paper">Paper Check - Net 60</option>
+                </select> 
+              </div>
+            </div>
+          </div>
+          
+          <div ng-if="data.terms != 'paper' && data.terms"class ="row">
+           <div class="col-md-6">
+              <div class="form-group">
+                <label for="cs_email">Remittance Email</label>
+                <input ng-model="data.rEmail" id="rRmail" placeholder="Email address for remmittance information" type="text" name="cs_email" class="form-control" required="required" >
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            </div>
+                  
+           <div class="row">   
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Is your company publicly traded or private? </label>
+            		<select ng-model="data.company_trade" class="form-control" required="required">
+                 <option disabled selected value>- - Select an option - -</option>
+ 								 <option value="private">Private</option>
+                 <option value="public">Public</option>
+                </select> 
+              </div>
+            </div>
+          </div>
+             
+             
+          <div class="row">
+             <div class="col-md-12">
+              <div class="form-group">
+                <label>Are there any members of a HonorHealth employee or staff physician's immediate family, who own part or all of the
+ business, have significant equity interest in your company (such as ownership interest, stock, or other financial
+ interests) in the products or services provided by your Company? (Immediate family members include husband, wife,
+ natural or adoptive parent, child or sibling, stepparent, stepchild, stepbrother or stepsister, father-in-law, mother-in-law,
+ son-in-law, daughter-in-law, brother-in-law, sister-in-law, grandparent, grandchild, spouse of a grandparent or
+ grandchild.) </label>
+            		<select ng-model="data.coi" class="form-control">
+                 <option disabled selected value>- - Select an option - -</option>
+ 								 <option value="yes">Yes</option>
+                 <option value="no">No</option>
+                </select> 
+              </div>
+            </div>
+          </div>
+            
+            <div ng-if="data.coi =='yes'" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="conflict_list">Please list all immediate family members and their relationship to the employee/physician: *</label>
+                <textarea ng-model="data.conflict_list" id="conflict_list" name="conflict_list" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div>
+            
+            
+           
+<div class="attachment">
+         <now-attachments-list template="sp_attachment_single_line" ></now-attachments-list>
+          <label style="float:left;font-weight:normal;cursor:pointer;"><sp-attachment-button></sp-attachment-button><span style="padding-left:4px;">${Please attach a copy of your W9.}</span></label>
+          	
+            <!--<sp-message-dialog name="delete_attachment" title="{{m.dialogTitle}}" message="{{m.dialogMessage}}" ok="{{m.dialogOK}}" cancel="{{m.dialogCancel}}" dialog-class="delete-dialog"/>-->
+          </div>
+            
+        </form>
+          
+
+
+      
+
+    </div>
+
+  
+  
+
+  </div>
+          
+   <div class="container" ng-style="{'max-width': boundingBox.width + 'px', 'max-height': boundingBox.height + 'px'}">
+     <label style="text-align: center;">
+       By signing below, I hereby acknowledge that I have completely read and fully understand the
+HonorHealth Confidentiality Statement and Computer Systems Acceptable Usage Agreement.
+     </label>       
+     <signature-pad accept="accept" clear="clear" height="220" width="500" dataurl="dataurl"></signature-pad>
+
+            <div class="buttons">
+                <button ng-click="clear(); data.src = NULL">Clear Signature</button>
+               
+                <button ng-click="signature = accept(); data.src = signature.dataUrl">Save Signature</button>
+   
+            <span ng-if="data.src" >
+             Signature Saved <span class="glyphicon glyphicon-ok icon-success"></span>
+              </span>          
+   </div>
+   </div>
+  
+  
+    <br>
+  <div class="form-group">
+  <div class="col-md-4">
+<button id="singlebutton" class="btn btn-primary green" ng-click="submit(); data.src = signature.dataUrl">Submit</button>
+     </div>
+</div>
+  <br><br><br><br>
+</form>
+
+
+
+
+     
+]]></template>
+    </sp_widget>
+</record_update>
